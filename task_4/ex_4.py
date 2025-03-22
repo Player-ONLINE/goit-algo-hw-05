@@ -19,7 +19,7 @@ def parse_input(user_input):
 
 @input_error
 def add_contact(args, contacts):
-    name, phone = args
+    name, phone = args  # Декоратор перехопить помилки, якщо їх буде
     contacts[name] = phone
     return "Contact added."
 
