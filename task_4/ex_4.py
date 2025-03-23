@@ -19,7 +19,7 @@ def parse_input(user_input):
 
 @input_error
 def add_contact(args, contacts):
-    name, phone = args  # Декоратор перехопить помилки, якщо їх буде
+    name, phone = args  
     contacts[name] = phone
     return "Contact added."
 
@@ -46,7 +46,7 @@ def main():
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ")
-        command, args = parse_input(user_input)
+        command, *args = parse_input(user_input)
 
         if command in ["close", "exit", "bye", "-"]:
             print("Good bye!")
@@ -66,3 +66,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Виходе, помилка була в тому, що я просто не поставив ось цю "*" і все ? 
